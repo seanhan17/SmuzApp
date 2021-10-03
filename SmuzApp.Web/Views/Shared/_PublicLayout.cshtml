@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, monster admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, ">
+    <meta name="description" content="Monster is powerful and clean admin dashboard template, inpired from Google's Material Design">
+    <meta name="robots" content="noindex,nofollow">
+    <title>SmuzApp</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/favicon.ico">
+    @*<link rel="canonical" href="https://www.wrappixel.com/templates/monsteradmin/" />*@
+
+    <environment names="Development">
+        <!-- Custom CSS -->
+        <link href="~/lib/monster/css/style.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </environment>
+    <environment names="Staging,Production">
+        <!-- Custom CSS -->
+        <link href="~/lib/monster/css/style.min.css" rel="stylesheet">
+    </environment>
+</head>
+<body>
+    <div class="main-wrapper">
+        <partial name="_Loader" />
+        @{
+            string publicWallpaper = "../../lib/monster/assets/images/background/login-register.jpg?" + @DateTime.Now.Ticks.ToString();
+        }
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background: url(@publicWallpaper) no-repeat center center; background-size: cover; ">
+            <div class="auth-box p-4 bg-white rounded">
+                @RenderBody()
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/monster/assets/libs/jquery/dist/jquery.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/assets/libs/bootstrap/dist/js/bootstrap.bundle.js" asp-append-version="true"></script>
+
+        @*Clean Architecture sample code*@
+        @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/monster/assets/libs/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+
+        @*Clean Architecture sample code*@
+        @*<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"></script>
+            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"></script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>*@
+    </environment>
+
+    @{ <partial name="_ValidationScriptsPartial" /> }
+
+    @await RenderSectionAsync("scripts", required: false).ConfigureAwait(false)
+</body>
+</html>

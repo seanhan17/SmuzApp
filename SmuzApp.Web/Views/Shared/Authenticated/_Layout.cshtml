@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, monster admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, ">
+    <meta name="description" content="Monster is powerful and clean admin dashboard template, inpired from Google's Material Design">
+    <meta name="robots" content="noindex,nofollow">
+    <title>SmuzApp</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/monsteradmin/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <environment names="Development">
+        <!-- Custom CSS -->
+        <link href="~/lib/monster/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="~/lib/monster/assets/libs/apexcharts/dist/apexcharts.css">
+    </environment>
+    <environment names="Production">
+        <!-- Custom CSS -->
+        <link href="~/lib/monster/css/style.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="~/lib/monster/assets/libs/apexcharts/dist/apexcharts.css">
+
+        @*<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+            <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" /*@>
+    </environment>
+</head>
+<body>
+    <partial name="_Loader" />
+
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <partial name="../_Loader.cshtml" />
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <partial name="_Header.cshtml" />
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <partial name="_LeftSidebar.cshtml" />
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            @RenderBody()
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer">
+                All right reserved by Monster Admin.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- customizer Panel -->
+    <!-- ============================================================== -->
+    <partial name="_CustomizerPanel.cshtml" />
+
+    <environment names="Development">
+        <script src="~/lib/monster/assets/libs/jquery/dist/jquery.js" asp-append-version="true"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="~/lib/monster/assets/libs/bootstrap/dist/js/bootstrap.bundle.js" asp-append-version="true"></script>
+        <!-- apps -->
+        <script src="~/lib/monster/js/app.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/js/app.init.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/js/app-style-switcher.js" asp-append-version="true"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="~/lib/monster/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/assets/libs/jquery-sparkline/jquery.sparkline.js" asp-append-version="true"></script>
+        <!--Wave Effects -->
+        <script src="~/lib/monster/js/waves.js" asp-append-version="true"></script>
+        <!--Menu sidebar -->
+        <script src="~/lib/monster/js/sidebarmenu.js" asp-append-version="true"></script>
+        <!--Custom JavaScript -->
+        <script src="~/lib/monster/js/feather.min.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/js/custom.js" asp-append-version="true"></script>
+
+        @*Clean Architecture sample code*@
+        @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/monster/assets/libs/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="~/lib/monster/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+        <!-- apps -->
+        <script src="~/lib/monster/js/app.min.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/js/app.init.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/js/app-style-switcher.js" asp-append-version="true"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="~/lib/monster/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/assets/libs/jquery-sparkline/jquery.sparkline.min.js" asp-append-version="true"></script>
+        <!--Wave Effects -->
+        <script src="~/lib/monster/js/waves.js" asp-append-version="true"></script>
+        <!--Menu sidebar -->
+        <script src="~/lib/monster/js/sidebarmenu.js" asp-append-version="true"></script>
+        <!--Custom JavaScript -->
+        <script src="~/lib/monster/js/feather.min.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/js/custom.min.js" asp-append-version="true"></script>
+
+        @*<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"></script>
+            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"></script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>*@
+    </environment>
+
+
+    <!-- ############################################################### -->
+    <!-- This Page Js Files Here -->
+    <!-- ############################################################### -->
+    <script src="~/lib/monster/assets/libs/apexcharts/dist/apexcharts.min.js" asp-append-version="true"></script>
+    <script src="~/lib/monster/js/pages/dashboards/dashboard1.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("scripts", required: false).ConfigureAwait(false)
+</body>
+</html>
