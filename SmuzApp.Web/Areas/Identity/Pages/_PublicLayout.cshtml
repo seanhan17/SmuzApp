@@ -16,7 +16,7 @@
 
     <environment names="Development">
         <!-- Custom CSS -->
-        <link href="~/lib/monster/css/style.css" rel="stylesheet">
+        <link href="~/lib/monster/dist/css/style.css" rel="stylesheet">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -26,14 +26,14 @@
     </environment>
     <environment names="Staging,Production">
         <!-- Custom CSS -->
-        <link href="~/lib/monster/css/style.min.css" rel="stylesheet">
+        <link href="~/lib/monster/dist/css/style.min.css" rel="stylesheet">
     </environment>
 </head>
 <body>
     <div class="main-wrapper">
         <partial name="_Loader" />
         @{
-            string publicWallpaper = "../../lib/monster/assets/images/background/login-register.jpg?" + @DateTime.Now.Ticks.ToString();
+            string publicWallpaper = "../../lib/monster/src/assets/images/background/login-register.jpg?" + @DateTime.Now.Ticks.ToString();
         }
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background: url(@publicWallpaper) no-repeat center center; background-size: cover; ">
             <div class="auth-box p-4 bg-white rounded">
@@ -55,15 +55,15 @@
     </div>
 
     <environment names="Development">
-        <script src="~/lib/monster/assets/libs/jquery/dist/jquery.js" asp-append-version="true"></script>
-        <script src="~/lib/monster/assets/libs/bootstrap/dist/js/bootstrap.bundle.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/src/assets/libs/jquery/dist/jquery.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/src/assets/libs/bootstrap/dist/js/bootstrap.bundle.js" asp-append-version="true"></script>
 
         @*Clean Architecture sample code*@
         @*<script src="~/js/site.js" asp-append-version="true"></script>*@
     </environment>
     <environment names="Production">
-        <script src="~/lib/monster/assets/libs/jquery/dist/jquery.min.js" asp-append-version="true"></script>
-        <script src="~/lib/monster/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/src/assets/libs/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/src/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
 
         @*Clean Architecture sample code
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"
