@@ -1,0 +1,21 @@
+﻿@page
+@model LogoutModel
+
+<header>
+    <div class="logo text-center">
+        <span class="db"><img src="~/lib/monster/assets/images/logo-icon.png" alt="logo" /></span>
+        <h5 class="font-weight-medium mb-3 mt-1">Log Out</h5>
+    </div>
+    @{
+        if (User.Identity.IsAuthenticated)
+        {
+            <form class="form-inline text-center" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                <button type="submit" class="text-decoration-none btn btn-link text-dark">Click here to Logout</button>
+            </form>
+        }
+        else
+        {
+            <p class="text-center">You have successfully logged out of the application.</p>
+        }
+    }
+</header>

@@ -1,11 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SmuzApp.Core.Interfaces;
 using SmuzApp.Infrastructure.Data;
+using SmuzApp.Infrastructure.Identity;
+using SmuzApp.Web.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,11 +30,22 @@ namespace SmuzApp.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("Default"));
-            });
+                options.UseSqlServer(Configuration.GetConnectionString("ApplicationConnection")));
+
+            services.AddDbContext<AppIdentityDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                    .AddEntityFrameworkStores<AppIdentityDbContext>()
+                    .AddDefaultTokenProviders();
+
+            services.AddCoreServices(Configuration);
 
             services.AddControllersWithViews();
+            services.AddRazorPages(options => {
+                // Handling default route. Might need to redo
+                options.Conventions.AddAreaPageRoute("Identity", "/Account/Login", "");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,18 +61,35 @@ namespace SmuzApp.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // Handling default route. Might need to redo
+            //app.Use(async (context, next) =>
+            //{
+            //    if (context.Request.Path == "/")
+            //    {
+            //        context.Request.Path = "/Identity/Account/Login";
+            //    }
+
+            //    await next.Invoke();
+            //});
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
+
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                });
+
+                endpoints.MapRazorPages();
             });
         }
     }

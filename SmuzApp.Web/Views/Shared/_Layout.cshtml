@@ -24,13 +24,8 @@
     <environment names="Development">
         <!-- Custom CSS -->
         <link href="~/lib/monster/css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="~/lib/monster/assets/libs/apexcharts/dist/apexcharts.css">
     </environment>
     <environment names="Production">
-        <!-- Custom CSS -->
-        <link href="~/lib/monster/css/style.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="~/lib/monster/assets/libs/apexcharts/dist/apexcharts.css">
-
         @*<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
                   asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
                   asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
@@ -44,18 +39,17 @@
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <div id="main-wrapper">
-        <partial name="../_Loader.cshtml" />
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
-        <partial name="_Header.cshtml" />
+        <partial name="./LayoutPanels/_Header.cshtml" />
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <partial name="_LeftSidebar.cshtml" />
+        <partial name="./LayoutPanels/_LeftSidebar.cshtml" />
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -90,7 +84,8 @@
     <!-- ============================================================== -->
     <!-- customizer Panel -->
     <!-- ============================================================== -->
-    <partial name="_CustomizerPanel.cshtml" />
+    <partial name="./LayoutPanels/_CustomizerPanel.cshtml" />
+    <div class="chat-windows"></div>
 
     <environment names="Development">
         <script src="~/lib/monster/assets/libs/jquery/dist/jquery.js" asp-append-version="true"></script>
@@ -141,13 +136,6 @@
                     asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"></script>
             <script src="~/js/site.min.js" asp-append-version="true"></script>*@
     </environment>
-
-
-    <!-- ############################################################### -->
-    <!-- This Page Js Files Here -->
-    <!-- ############################################################### -->
-    <script src="~/lib/monster/assets/libs/apexcharts/dist/apexcharts.min.js" asp-append-version="true"></script>
-    <script src="~/lib/monster/js/pages/dashboards/dashboard1.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("scripts", required: false).ConfigureAwait(false)
 </body>

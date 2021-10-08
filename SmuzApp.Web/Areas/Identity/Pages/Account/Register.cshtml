@@ -1,0 +1,43 @@
+﻿@page
+@model RegisterModel
+<div>
+    <div class="logo text-center">
+        <span class="db"><img src="~/lib/monster/assets/images/logo-icon.png" alt="logo" /></span>
+        <h5 class="font-weight-medium mb-3 mt-1">Sign Up to Admin</h5>
+    </div>
+    <!-- Form -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <form asp-route-returnUrl="@Model.ReturnUrl" class="form-horizontal" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.FullName" type="text" class="form-control form-input-bg" id="tb-rfname" placeholder="john deo" required>
+                    <label asp-for="Input.FullName" for="tb-rfname">Full Name</label>
+                    <span asp-validation-for="Input.FullName" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" type="email" class="form-control form-input-bg" id="tb-remail" placeholder="john@gmail.com" required>
+                    <label asp-for="Input.Email" for="tb-remail">Email</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" type="password" class="form-control form-input-bg" id="text-rpassword" placeholder="*****" required>
+                    <label asp-for="Input.Password" for="text-rpassword">Password</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.ConfirmPassword" type="password" class="form-control form-input-bg" id="text-rcpassword" placeholder="*****" required>
+                    <label asp-for="Input.ConfirmPassword" for="text-rcpassword">Confirm Password</label>
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="checkbox checkbox-primary mb-3">
+                    <input id="checkbox-signup" type="checkbox" class="chk-col-indigo material-inputs">
+                    <label for="checkbox-signup"> I agree to all <a href="#">Terms</a></label>
+                </div>
+                <div class="d-flex align-items-stretch">
+                    <button type="submit" class="btn btn-info d-block w-100">Sign up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

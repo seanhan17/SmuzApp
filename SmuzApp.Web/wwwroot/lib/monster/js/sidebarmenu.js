@@ -58,10 +58,12 @@ $(function() {
     });
     
     // Auto scroll to the active nav
-    if ( $(window).width() > 768 || window.Touch) { 
-         $('.scroll-sidebar').animate({
-            scrollTop: $("#sidebarnav .sidebar-item.selected").offset().top -250
-        }, 500);
+    if ($(window).width() > 768 || window.Touch) {
+        if ($(".sidebar-item.selected").length > 0) {
+            $('.scroll-sidebar').animate({
+                scrollTop: $("#sidebarnav .sidebar-item.selected").offset().top - 250
+            }, 500);
+        }
     } 
    
 });

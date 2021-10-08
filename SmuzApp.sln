@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{54000367-5D7E-4AAB-9A91-D50BAFE9CD26}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\README.md = ..\..\..\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D02C1674-192B-4867-8E25-0A258AB34C01}"
 EndProject
@@ -13,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmuzApp.Core", "SmuzApp.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmuzApp.Infrastructure", "SmuzApp.Infrastructure\SmuzApp.Infrastructure.csproj", "{BEC12D02-F737-40EE-A89D-265A51E8A600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmuzApp.Web", "SmuzApp.Web\SmuzApp.Web.csproj", "{05E25208-994B-43EA-B98D-E10B8F081ECA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmuzApp.Web", "SmuzApp.Web\SmuzApp.Web.csproj", "{05E25208-994B-43EA-B98D-E10B8F081ECA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
