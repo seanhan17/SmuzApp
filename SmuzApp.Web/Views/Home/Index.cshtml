@@ -1,41 +1,17 @@
-﻿<link rel="stylesheet" href="~/lib/monster/src/assets/libs/apexcharts/dist/apexcharts.css">
+﻿@model AdministrationViewModel
 
-<!-- ============================================================== -->
-<!-- Bread crumb and right sidebar toggle -->
-<!-- ============================================================== -->
-<div class="page-breadcrumb">
-    <div class="row">
-        <div class="col-md-5 align-self-center">
-            <h3 class="page-title">Dashboard</h3>
-            <div class="d-flex align-items-center">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-        <div class="col-md-7 justify-content-end align-self-center d-none d-md-flex">
-            <div class="d-flex">
-                <div class="dropdown me-2">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        January 2021
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#">February 2021</a></li>
-                        <li><a class="dropdown-item" href="#">March 2021</a></li>
-                        <li><a class="dropdown-item" href="#">April 2021</a></li>
-                    </ul>
-                </div>
-                <button class="btn btn-success"><i data-feather="plus" class="fill-white feather-sm"></i> Create</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- ============================================================== -->
-<!-- End Bread crumb and right sidebar toggle -->
-<!-- ============================================================== -->
+@{
+    var bcModel = new BreadcrumbViewModel();
+    bcModel.MainPageTitle = "Dashboard";
+    bcModel.BreadcrumbList = new List<Breadcrumb>();
+    bcModel.BreadcrumbList.Add(new Breadcrumb() { PageTitle = "Home", isSelected = false });
+    bcModel.BreadcrumbList.Add(new Breadcrumb() { PageTitle = "Dashboard", isSelected = true });
+}
+
+<link rel="stylesheet" href="~/lib/monster/src/assets/libs/apexcharts/dist/apexcharts.css">
+
+@await Html.PartialAsync(BreadcrumbConstant.BREADCRUMB_PARTIAL_VIEW_PATH, bcModel)
+
 <!-- ============================================================== -->
 <!-- Container fluid  -->
 <!-- ============================================================== -->
