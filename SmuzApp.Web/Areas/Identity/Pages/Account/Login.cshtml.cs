@@ -10,8 +10,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 using SmuzApp.Infrastructure.Identity;
+using SmuzApp.Core.Interfaces;
 
 namespace SmuzApp.Web.Areas.Identity.Pages.Account
 {
@@ -20,10 +20,10 @@ namespace SmuzApp.Web.Areas.Identity.Pages.Account
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly ILogger<LoginModel> _logger;
+        private readonly IAppLogger<LoginModel> _logger;
 
         public LoginModel(SignInManager<ApplicationUser> signInManager, 
-            ILogger<LoginModel> logger,
+            IAppLogger<LoginModel> logger,
             UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;

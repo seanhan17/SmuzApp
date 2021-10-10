@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using SmuzApp.Core.Interfaces;
 using SmuzApp.Web.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -11,9 +11,9 @@ namespace SmuzApp.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IAppLogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IAppLogger<HomeController> logger)
         {
             _logger = logger;
         }

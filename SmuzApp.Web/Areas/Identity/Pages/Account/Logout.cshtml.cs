@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using SmuzApp.Core.Interfaces;
 using SmuzApp.Infrastructure.Identity;
 
 namespace SmuzApp.Web.Areas.Identity.Pages.Account
@@ -15,9 +15,9 @@ namespace SmuzApp.Web.Areas.Identity.Pages.Account
     public class LogoutModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly ILogger<LogoutModel> _logger;
+        private readonly IAppLogger<LogoutModel> _logger;
 
-        public LogoutModel(SignInManager<ApplicationUser> signInManager, ILogger<LogoutModel> logger)
+        public LogoutModel(SignInManager<ApplicationUser> signInManager, IAppLogger<LogoutModel> logger)
         {
             _signInManager = signInManager;
             _logger = logger;
