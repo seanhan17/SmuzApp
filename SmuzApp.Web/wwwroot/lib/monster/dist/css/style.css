@@ -10618,7 +10618,7 @@ Notify
 
 .scroll-sidebar {
   position: relative;
-  height: calc(100% - 50px); }
+  height: 100%; }
 
 .ps-scrollbar-y-rail {
   z-index: 1; }
