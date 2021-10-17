@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SmuzApp.Web.Constant
+namespace SmuzApp.Web.Common.Constant
 {
     public class BreadcrumbConstant
     {

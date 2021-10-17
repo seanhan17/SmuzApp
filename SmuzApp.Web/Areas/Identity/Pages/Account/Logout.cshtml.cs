@@ -31,6 +31,7 @@ namespace SmuzApp.Web.Areas.Identity.Pages.Account
         {
             try
             {
+                // Clears the user's claims stored in a cookie.
                 await _signInManager.SignOutAsync();
                 _logger.LogInformation("User logged out.");
                 if (returnUrl != null)

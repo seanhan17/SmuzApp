@@ -1,0 +1,30 @@
+﻿@model CreateAdminRoleViewModel
+
+<div class="modal fade" id="createUserRoleModel" tabindex="-1" role="dialog" aria-labelledby="createModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="createAdminRoleForm" method="post" asp-action="CreateAdminRole">
+                <div class="modal-header d-flex align-items-center">
+                    <h5 class="modal-title" id="createModalLabel">
+                        <i class="ti-marker-alt me-2"></i> Create New Admin Role
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <button type="button" class="btn btn-info">
+                            <i data-feather="user" class="feather-sm fil-white"></i>
+                        </button>
+                        <input id="createRolenameInput" asp-for="@Model.RoleName" type="text" class="form-control" placeholder="Enter Role Name Here" aria-label="name">
+                    </div>
+                    <span asp-validation-for="@Model.RoleName" class="text-danger"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-danger text-danger font-weight-medium rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success rounded-pill px-4">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

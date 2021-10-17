@@ -46,6 +46,19 @@ namespace SmuzApp.Web
                 // Handling default route. Might need to redo
                 options.Conventions.AddAreaPageRoute("Identity", "/Account/Login", "");
             });
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings.
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 0;
+            });
+
+            services.AddDatabaseDeveloperPageExceptionFilter();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,8 +91,8 @@ namespace SmuzApp.Web
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
 
 
             app.UseEndpoints(endpoints =>

@@ -24,12 +24,14 @@
     <environment names="Development">
         <!-- Custom CSS -->
         <link href="~/lib/monster/dist/css/style.css" rel="stylesheet">
+        <link href="~/lib/monster/src/assets/extra-libs/toastr/dist/build/toastr.min.css" rel="stylesheet">
     </environment>
     <environment names="Production">
         @*<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
                   asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
                   asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
             <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" /*@>
+        <link href="~/lib/monster/src/assets/extra-libs/toastr/dist/build/toastr.min.css" rel="stylesheet">
     </environment>
 </head>
 <body>
@@ -105,6 +107,8 @@
         <!--Custom JavaScript -->
         <script src="~/lib/monster/dist/js/feather.min.js" asp-append-version="true"></script>
         <script src="~/lib/monster/dist/js/custom.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/src/assets/extra-libs/toastr/dist/build/toastr.min.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/src/assets/extra-libs/toastr/toastr-init.js" asp-append-version="true"></script>
 
         @*Clean Architecture sample code*@
         @*<script src="~/js/site.js" asp-append-version="true"></script>*@
@@ -127,6 +131,8 @@
         <!--Custom JavaScript -->
         <script src="~/lib/monster/dist/js/feather.min.js" asp-append-version="true"></script>
         <script src="~/lib/monster/dist/js/custom.min.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/src/assets/extra-libs/toastr/dist/build/toastr.min.js" asp-append-version="true"></script>
+        <script src="~/lib/monster/src/assets/extra-libs/toastr/toastr-init.js" asp-append-version="true"></script>
 
         @*<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"
                     asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
@@ -136,6 +142,17 @@
                     asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"></script>
             <script src="~/js/site.min.js" asp-append-version="true"></script>*@
     </environment>
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        var ResultCode = {
+            '@(ResultCode.SUCCESS)': '@((int)ResultCode.SUCCESS)',
+            '@(ResultCode.FAILURE)': '@((int)ResultCode.FAILURE)'
+        }
+    </script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Helper/jquery-ajax.js" asp-append-version="true"></script>
+    <script src="~/js/Helper/toastr.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("scripts", required: false).ConfigureAwait(false)
 </body>

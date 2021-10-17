@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmuzApp.Infrastructure", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmuzApp.Web", "SmuzApp.Web\SmuzApp.Web.csproj", "{05E25208-994B-43EA-B98D-E10B8F081ECA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmuzApp.WebApi", "SmuzApp.WebApi\SmuzApp.WebApi.csproj", "{2C5CDD4C-EC38-4391-AF75-614D2A87CB7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{05E25208-994B-43EA-B98D-E10B8F081ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05E25208-994B-43EA-B98D-E10B8F081ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05E25208-994B-43EA-B98D-E10B8F081ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C5CDD4C-EC38-4391-AF75-614D2A87CB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5CDD4C-EC38-4391-AF75-614D2A87CB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5CDD4C-EC38-4391-AF75-614D2A87CB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5CDD4C-EC38-4391-AF75-614D2A87CB7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{9A1D16DB-A1A0-4528-B794-7F440CED6169} = {D02C1674-192B-4867-8E25-0A258AB34C01}
 		{BEC12D02-F737-40EE-A89D-265A51E8A600} = {D02C1674-192B-4867-8E25-0A258AB34C01}
 		{05E25208-994B-43EA-B98D-E10B8F081ECA} = {D02C1674-192B-4867-8E25-0A258AB34C01}
+		{2C5CDD4C-EC38-4391-AF75-614D2A87CB7D} = {D02C1674-192B-4867-8E25-0A258AB34C01}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {064E142E-054F-4E12-B6B9-1BD0EDC23B6D}
